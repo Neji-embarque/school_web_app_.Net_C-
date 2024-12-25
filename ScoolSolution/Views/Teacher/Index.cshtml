@@ -1,0 +1,40 @@
+﻿@model List<Teacher>
+
+@* <a href ="/Teacher/Create">Add new Teacher</a>*@
+
+<a class="nav-link text-dark" asp-area="" asp-controller="Teacher" asp-action="Create">Add new Teacher</a>
+
+<br />
+
+
+<table>
+    <tr>
+        <th>
+            Teacher Name
+        </th>
+        <th>
+            Teacher Age
+        </th>
+        <th>Delete</th>
+    </tr>
+
+    @foreach (Teacher teacher in Model)
+    {
+        <tr>
+            <td>
+                @teacher.TeacherName
+            </td>
+            <td>
+                @teacher.TeacherAge
+            </td>
+            <td>
+                <a href="/Teacher/Delete/@teacher.TeacherId">X</a>
+            </td>
+        </tr>
+    }
+</table>
+
+
+
+
+
